@@ -20,13 +20,15 @@
    square(2 + 17);
    square(square(15));
    ```
+   after trying each of this in the console we can clearly see that the parameters can be a number like the first example 10, a statement or even a function within a function
 
 2. Write a sentence in plain English describing how `square(square(15))` is
    evaluated.
-
+like i said in the question above the parameter of the function square holds the value of the function square(15) (num = square(15)). so then the programme will start treating the child parameter (15) which will give 225 so the parent parameter will now hold the value 225 (num=225), then function will do what we asked again (num*num) so it will return the result 
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
    function `square` still work? Why or why not?
+   yes it will still work the way it is supposed to be because the parameter is the general case which will then later change by the values we want to work on in the execution phase
 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
@@ -38,43 +40,49 @@
    function square(monkey) {
      return x * x;
    }
+   //for the above function x is not defined because the parameter is monkey yet the statement inside it uses X so it will never get any results
 
    function square(5) {
      return 5 * 5;
    }
+   //missing formal parameter : in this function 5 is a number and numbers can't be a parameter
 
    function square("x") {
      return "x" * "x";
    }
+   //missing formal parameter: in this function as well the parameter is wrong because we can't use "",'',!,=,... etc as parameters
    ```
 
 5. Fix the invalid syntax in the following functions (you can copy and paste these
    invalid definitions into your console and then edit them there):
 
    ```js
-   func square1(x {
+   function square1(x){
      return x * x;
    }
 
-   functionsquare2 x)
+   function square2(x){
      return x * x;
    }
 
-   function (x) square3 {
+   function square3(x){
      return x * x;
+   }
    ```
 
 6. The following functions exhibit poor style -- fix these issues using the
    original version of `square` as a reference.
 
    ```js
-   function square(x){return x*x;}
+   function square(x){
+    return x * x;
+    }
 
-   function square (x) { return x *x;
+   function square(x){
+    return x * x;
    }
 
-   function square(x)
-   {
+   function square(x){
    return x * x;
    }
    ```
@@ -83,7 +91,7 @@
 
   ```js
   function cube(x) {
-    // your code here
+    return x*x*x
   }
   ```
 
@@ -93,8 +101,9 @@
 
   ```js
   // don't forget the parameters!
-  function fullName() {
+  function fullName(firstName,lastName) {
     // your code here
+    return (firstName+" "+lastName);
   }
   fullName("John", "Doe") // => "John Doe"
   ```
@@ -104,6 +113,11 @@
 
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
+    ```js
+    var greeter = function(str){
+      return ("Hello, "+str+"!");
+    }
+    ```
 
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
@@ -114,6 +128,21 @@
     ```js
     function perimeterRect(l, w) {
       return 2 * (l + w);
+    }
+    function areaSquare(s){
+      return s*s;
+    }
+    function areaRect(l,w){
+      return l*w;
+    }
+    function areaPara(l,h){
+      return l*h;
+    }
+    function areaTra(h,b1,b2){
+      return 1/2*h*(b1+b2)
+    }
+    function areaCircle(r){
+      return Math.PI*(r*r);
     }
     ```
 

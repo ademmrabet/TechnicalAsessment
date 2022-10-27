@@ -1,19 +1,57 @@
 // 1. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
-};
+    for(var i=0; i<array.length;i++){
+        if(array.length===0){
+            return 0;
+        }else if(array.length === 1){
+            return array[0];
+        }else if(array.length>1){
+            var  result=0;
+            result = array[0]+sum(array.slice(1))
+        }
+        return result;
+    }
+  };
 
 // 2. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+    var result=0;
+    for(var i=0; i<array.length; i++){
+        if(array===0){
+            return 0;
+        }else if(array[i]=== Array){
+            return array[i]=array[0]+arraySum(array.slice(1));
+        }else{
+            result = array[0]+arraySum(array.slice(1))
+        }
+    }
 };
 
 // 3. Check if a number is even.
 var isEven = function(n) {
-};
+    var result=0;
+    if(n===0){
+      return true;
+    }else if(n===1){
+      return false;
+    }else if(n>0){
+      return isEven(n-2);
+    }else{
+      return isEven(-n)
+    }
+  };
 
 // 4. Write a function that reverses a string.
 var reverse = function(string) {
+    for(var i=0; i<string.length;i++){
+        if(string.length === 0){
+            return 0;
+        }else{
+        return string.substr(1)+sum(string.charAt())
+        }
+    }
 };
 
 

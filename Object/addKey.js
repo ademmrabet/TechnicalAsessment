@@ -5,3 +5,7 @@ var animal;
 var addKey;
 
 
+addKey=function(obj,key,value){
+obj.key=value;
+return obj={}
+}
